@@ -29,6 +29,13 @@ app.use(express.json());
 app.get("/filmes", filmeController.listarFilmes);
 app.get("/filmes/:id", filmeController.buscarFilme);
 
+app.use((req, res, next) => {
+  res.status(404).json({
+    erro: 'Rota não encontrada',
+    status: 404
+  });
+});
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORTA, () => {
     console.log(`API disponível em http://localhost:${PORTA}`);

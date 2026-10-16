@@ -6,7 +6,6 @@ export function listarFilmes() {
 export function buscarFilme(id){
   const idFiltrado = Number(id);
   const filmes = filmeRepository.listar();
-
   if(!isNaN(idFiltrado)){
     const filmeFiltrado = filmes.find((filme) => filme.id === idFiltrado)
     return filmeFiltrado
