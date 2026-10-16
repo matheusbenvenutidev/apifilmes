@@ -27,7 +27,7 @@ app.use((request, response, next) => {
 app.use(express.json());
 
 app.get("/filmes", filmeController.listarFilmes);
-
+app.get("/filmes/:id", filmeController.buscarFilme);
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   app.listen(PORTA, () => {
