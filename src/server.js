@@ -42,4 +42,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   });
 }
 
+app.post("/filmes", filmeController.adicionarFilme());
+
+app.patch("/filmes/:id", filmeController.atualizarFilme());
+
 export default app;
